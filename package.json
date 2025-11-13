@@ -1,0 +1,27 @@
+{
+  "name": "atividadeprogramacaoparainternet02",
+  "version": "1.0.0",
+  "description": "atividade 02 ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gustavo14nico/atividadeprogramacaoparainternet02.git"
+  },
+  "keywords": [
+    "HTTP"
+  ],
+  "author": "Gustavo de Assis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gustavo14nico/atividadeprogramacaoparainternet02/issues"
+  },
+  "homepage": "https://github.com/Gustavo14nico/atividadeprogramacaoparainternet02#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
