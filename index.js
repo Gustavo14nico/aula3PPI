@@ -55,7 +55,7 @@ app.get("/", (req, res) => {
       <body>
         <nav class="navbar navbar-expand-lg topbar navbar-dark">
           <div class="container-fluid">
-            <a class="navbar-brand fw-semibold" href="/">MeuSistema</a>
+            <a class="navbar-brand fw-semibold" href="/">Sistema de Fornecedores</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Alternar menu">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,14 +88,14 @@ app.get("/", (req, res) => {
 
         <main>
           <div class="panel">
-            <h1 style="color:var(--primario);" class="mb-3">Bem-vindo ao Painel</h1>
+            <h1 style="color:var(--primario);" class="mb-3">Bem-vindo</h1>
             <p class="text-muted mb-4">Escolha uma opção no menu para gerenciar fornecedores ou acessar o sistema.</p>
             <a href="/cadastroFornecedores" class="btn btn-outline-primary me-2">Ir para Cadastros</a>
             <a href="/ListaFornecedores" class="btn btn-primary">Lista de Fornecedores</a>
           </div>
         </main>
 
-        <footer>© Sistema — Interface de exemplo</footer>
+        <footer>© Formulario de Exemplo Aula 03</footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
       </body>
