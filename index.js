@@ -7,7 +7,6 @@ let ListaFornecedores = [];
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
-/* ===== Página inicial ===== */
 app.get("/", (req, res) => {
   res.send(`
     <!doctype html>
@@ -104,7 +103,7 @@ app.get("/", (req, res) => {
   `);
 });
 
-/* ===== Tela de login (GET) ===== */
+
 app.get("/login", (req, res) => {
   res.send(`
     <!doctype html>
@@ -143,7 +142,7 @@ app.get("/login", (req, res) => {
   `);
 });
 
-/* ===== Processa login (POST) ===== */
+
 app.post("/login", (req, res) => {
   const usuario = req.body.usuario;
   const senha = req.body.senha;
@@ -173,7 +172,6 @@ app.post("/login", (req, res) => {
       `);
       return;
     } else {
-      // credenciais inválidas — reapresenta o formulário com alerta
       res.send(`
         <!doctype html>
         <html lang="pt-BR">
@@ -213,7 +211,6 @@ app.post("/login", (req, res) => {
     }
   }
 
-  // campos faltando — mostra mensagens de erro ao usuário
   let conteudo = `
     <!doctype html>
     <html lang="pt-BR">
@@ -258,7 +255,6 @@ app.post("/login", (req, res) => {
   res.send(conteudo);
 });
 
-/* ===== Logout ===== */
 app.get("/logout", (req, res) => {
   res.send(`
     <!doctype html>
@@ -280,10 +276,6 @@ app.get("/logout", (req, res) => {
   `);
 });
 
-/* ===== Formulário de cadastro de fornecedores (GET) =====
-   Observação: reordenei campos e alterei placeholders/labels/textos
-   porém mantive os 'name' exatamente iguais para preservar o POST.
-*/
 app.get("/cadastroFornecedores", (req, res) => {
   res.send(`
     <!doctype html>
@@ -409,9 +401,6 @@ app.get("/cadastroFornecedores", (req, res) => {
   `);
 });
 
-/* ===== Recebe POST do formulário e salva na lista =====
-   Mantive exatamente os mesmos nomes de campo para compatibilidade.
-*/
 app.post("/adicionarFornecedores", (req, res) => {
   const cnpj = req.body.cnpj;
   const razaoSocial = req.body.razaoSocial;
@@ -437,7 +426,6 @@ app.post("/adicionarFornecedores", (req, res) => {
     });
     res.redirect("/ListaFornecedores");
   } else {
-    // Reapresenta o formulário com os valores já preenchidos e mensagens de erro.
     let conteudo = `
       <!doctype html>
       <html lang="pt-BR">
@@ -585,7 +573,6 @@ app.post("/adicionarFornecedores", (req, res) => {
   }
 });
 
-/* ===== Lista de fornecedores (GET) ===== */
 app.get("/ListaFornecedores", (req, res) => {
   let html = `
     <!doctype html>
@@ -671,7 +658,6 @@ app.get("/ListaFornecedores", (req, res) => {
   res.send(html);
 });
 
-/* ===== Inicializa servidor ===== */
 app.listen(port, host, () => {
   console.log(`Servidor executando em http://${host}:${port}`);
 });
