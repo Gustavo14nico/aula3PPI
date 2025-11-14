@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Cadastro de Medicamentos</title>
+      <title>Cadastro de Fornecedor</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <style>
-        body { background-color: #fff0f0; min-height: 100vh; display:flex; align-items:center; justify-content:center; }
-        .card { border: 2px solid #ff4d4d; border-radius:1rem; box-shadow:0 0 15px rgba(255,0,0,0.15); transition:transform 0.2s; }
+        body { background-color: #f7f0ffff; min-height: 100vh; display:flex; align-items:center; justify-content:center; }
+        .card { border: 2px solid #8bb6fbff; border-radius:1rem; box-shadow:0 0 15px rgba(139,182,251,0.15); transition:transform 0.2s; }
         .card:hover { transform: scale(1.02); }
         h2 { color:#b30000; font-weight:700; }
         .form-label { font-weight:600; color:#660000; }
@@ -34,65 +34,80 @@ app.get("/", (req, res) => {
         <div class="row justify-content-center">
           <div class="col-md-8 col-lg-6">
             <div class="card p-4 bg-white">
-              <h2 class="text-center mb-4">Cadastro de Medicamentos</h2>
+              <h2 class="text-center mb-4">Cadastro de Fornecedor</h2>
               
-              <form action="/adicionarMedicamento" method="POST">
+              <form action="/adicionarFornecedor" method="POST">
                 <div class="mb-3">
-                  <label for="nome" class="form-label">Nome do Medicamento</label>
-                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: Paracetamol 500mg" >
+                  <label for="nome" class="form-label">Nome do Fornecedor</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: Loja 123" >
                 </div>
 
                 <div class="mb-3">
-                  <label for="laboratorio" class="form-label">Laboratório</label>
-                  <input type="text" class="form-control" id="laboratorio" name="laboratorio" placeholder="Ex: EMS, Neo Química" >
+                  <label for="CNPJ" class="form-label">CNPJ</label>
+                  <input type="text" class="form-control" id="CNPJ" name="CNPJ" placeholder="Ex: 12.345.678/0001-99" >
                 </div>
 
                 <div class="mb-3">
-                  <label for="categoria" class="form-label">Categoria</label>
-                  <select class="form-select" id="categoria" name="categoria" >
-                    <option value="" disabled selected>Selecione...</option>
-                    <option>Analgésico</option>
-                    <option>Antibiótico</option>
-                    <option>Antialérgico</option>
-                    <option>Anti-inflamatório</option>
-                    <option>Vitaminas</option>
-                    <option>Outros</option>
-                  </select>
+                  <label for="Razão Social" class="form-label">Razão Social</label>
+                  <input type="text" class="form-control" id="Razão Social" name="Razão Social" placeholder="Ex: Empresa XYZ Ltda." >
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="preco" class="form-label">Preço (R$)</label>
-                    <input type="number" step="0.01" class="form-control" id="preco" name="preco" placeholder="Ex: 19.99" >
+                    <label for="endereço" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="endereço" name="endereço" placeholder="Ex: Rua das Flores, 123" >
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="quantidade" class="form-label">Quantidade em Estoque</label>
-                    <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Ex: 50" >
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Ex: São Paulo" >
                   </div>
                 </div>
 
                 <div class="mb-3">
-                  <label for="validade" class="form-label">Data de Validade</label>
-                  <input type="date" class="form-control" id="validade" name="validade" >
-                </div>
-
-                <div class="mb-3">
-                  <label for="receita" class="form-label">Necessita Receita Médica?</label>
-                  <select class="form-select" id="receita" name="receita" >
+                  <label for="UF" class="form-label">UF</label>
+                  <select class="form-select" id="UF" name="UF" >
                     <option value="" disabled selected>Selecione...</option>
-                    <option>Sim</option>
-                    <option>Não</option>
+                    <option>ES</option>
+                    <option>MG</option>
+                    <option>RJ</option>
+                    <option>SP</option>
+                    <option>PR</option>
+                    <option>RS</option>
+                    <option>SC</option>
+                    <option>AM</option>
+                    <option>AP</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RN</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SE</option>
+                    <option>TO</option>
                   </select>
                 </div>
 
                 <div class="mb-3">
-                  <label for="descricao" class="form-label">Descrição / Indicações</label>
-                  <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Indicações, posologia, cuidados..."></textarea>
+                  <label for="CEP" class="form-label">CEP</label>
+                  <input type="text" class="form-control" id="CEP" name="CEP" placeholder="Ex: 12345-678" >
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-mail</label>
+                  <textarea class="form-control" id="email" name="email" rows="3" placeholder="Ex: exemplo@dominio.com"></textarea>
                 </div>
 
                 <div class="d-flex justify-content-between mt-4">
-                  <button type="submit" class="btn btn-success px-4">Cadastrar</button>
-                  <a href="/listaMedicamentos" class="btn btn-primary px-4">Ver Lista</a>
+                  <label for="telefone" class="form-label">Telefone</label>
+                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Ex: (11) 91234-5678" >
                 </div>
               </form>
             </div>
